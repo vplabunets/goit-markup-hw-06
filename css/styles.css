@@ -159,9 +159,9 @@ img {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -1px;
   width: 100%;
-  border-bottom: 4px solid #2196f3;
+  border-bottom: 4px solid var(--accent-color);
   border-radius: 2px;
 }
 .header-contacts {
@@ -238,6 +238,7 @@ img {
   color: var(--main-white-color);
   background-color: var(--accent-color);
   cursor: pointer;
+  border: transparent;
   border-radius: 4px;
   padding: 10px 32px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -309,14 +310,14 @@ img {
   position: absolute;
   left: 0;
   bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .products-text {
-  padding-top: 27px;
-  padding-bottom: 27px;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
-  text-align: center;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--main-white-color);
@@ -529,9 +530,22 @@ address {
 .footer-mailing {
   margin-left: 93px;
 }
-.mailing-box {
+
+.footer-mailing-box > input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.footer-mailing-box {
   display: flex;
 }
+
+.footer-mailing-box > input {
+  padding-left: 16px;
+  margin-right: 12px;
+}
+
 #footer-mailing-form {
   background-color: var(--secondary-background-color);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -593,7 +607,6 @@ address {
 
 .portfolio-btn:hover,
 .portfolio-btn:focus {
-  outline: none;
   background-color: var(--accent-color);
   color: var(--main-white-color);
   box-shadow: 0px 2px 2px 0px #0000001f;
@@ -675,7 +688,8 @@ address {
   position: relative;
 }
 
-.portfolio-item-link:hover .portfolio-img-text {
+.portfolio-item-link:hover.portfolio-img-text,
+.portfolio-item-link:focus .portfolio-img-text {
   display: block;
   transform: translateY(0);
   transition-duration: 250ms;
@@ -691,7 +705,7 @@ address {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition-duration: 500ms;
+  transition-duration: 250ms;
 }
 
 .backdrop-title {
@@ -703,64 +717,154 @@ address {
   letter-spacing: 0.03em;
   color: var(--secondary-text-color);
 }
-.backdrop-item {
-  display: block;
-  margin-left: 30px;
-  margin-right: 30px;
+.backdrop-item-input,
+.backdrop-item-label,
+.backdrop-item-textarea {
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
+
+.backdrop-item {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+  margin-right: 40px;
+  position: relative;
+}
+
+.icon-backdrop-name {
+  position: absolute;
+  left: 15px;
+  bottom: 14px;
+  fill: var(--logo-color);
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-backdrop-tel,
+.icon-backdrop-mail {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  fill: var(--logo-color);
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-backdrop-tel {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+}
+
 .backdrop-item:first-child {
   margin-top: 12px;
 }
+
 .backdrop-item:not(:first-child) {
   margin-top: 10px;
 }
-.backdrop-item:nth-child(1) > input,
-.backdrop-item:nth-child(2) > input,
-.backdrop-item:nth-child(3) > input {
-  display: block;
-  width: 100%;
-  height: 40px;
-}
-.backdrop-item:nth-child(4) > input {
-  display: block;
-  width: 100%;
-  height: 120px;
-}
 
 .backdrop-item:last-child {
+  display: flex;
   margin-top: 20px;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
-  color: #757575;
-}
-.backdrop-item:last-child > div > label > span {
-  color: var(--accent-color);
+  color: var(--main-text-color);
 }
 
-#backdrop-tel {
-  position: relative;
-}
-
-.backdrop-item .icon-send {
-  position: absolute;
-  left: 15px;
-  top: 14px;
-  fill: black;
-}
-.backdrop-item-text {
+.backdrop-item-label {
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.01em;
   color: var(--main-text-color);
 }
 
+.backdrop-item-input {
+  margin-top: 4px;
+  border-radius: 4px;
+  color: var(--main-text-color);
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  cursor: pointer;
+  fill: currentColor;
+  transition-property: color;
+  transition-duration: 5000ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop-item:nth-child(1) > input,
+.backdrop-item:nth-child(2) > input,
+.backdrop-item:nth-child(3) > input {
+  height: 40px;
+}
+
+.backdrop-item-input:hover + .icon-backdrop-name,
+.backdrop-item-input:hover + .icon-backdrop-tel,
+.backdrop-item-input:hover + .icon-backdrop-mail,
+.backdrop-item-input:focus + .icon-backdrop-name,
+.backdrop-item-input:focus + .icon-backdrop-tel,
+.backdrop-item-input:focus + .icon-backdrop-mail,
+.backdrop-item-input:hover,
+.backdrop-item-input:focus {
+  fill: var(--accent-color);
+  outline-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.backdrop-item-textarea {
+  resize: none;
+  margin-top: 4px;
+  padding: 12px 16px;
+  width: 100%;
+  height: 120px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop-item-textarea:hover,
+.backdrop-item-textarea:focus {
+  fill: var(--accent-color);
+  outline-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.checkbox-div {
+  margin-top: 4px;
+}
+
+.checkbox-div input {
+  margin-top: 0;
+}
+
+.contact-link {
+  color: var(--accent-color);
+}
+
 .backdrop-btn {
   display: block;
   margin: auto;
-  margin-top: 40px;
+  margin-top: 30px;
+  cursor: pointer;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.backdrop-btn:hover {
+  stroke: var(--accent-color);
+}
 .backdrop.is-hidden .modal {
   transform: scale(0) skewX(-90deg) rotateX(-90deg);
 }
@@ -782,12 +886,21 @@ address {
   width: 30px;
   height: 30px;
   padding: 0;
-  border: 0;
-  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   position: absolute;
   top: 8px;
   right: 8px;
+  background-color: var(--main-white-color);
+  fill: var(--logo-color);
+  cursor: pointer;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-btn:hover {
+  fill: var(--accent-color);
 }
 
 .is-hidden {

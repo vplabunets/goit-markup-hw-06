@@ -569,12 +569,13 @@
         </div>
         <div class="footer-mailing">
           <h3 class="footer-social-title">Подпишитесь на рассылку</h3>
-          <div class="mailing-box">
+          <div class="footer-mailing-box">
             <input
               type="email"
-              name="E-mail"
+              name="email"
               size="50"
               id="footer-mailing-form"
+              placeholder="E-mail"
             />
             <button type="button" class="footer-mailing-btn">
               Подписаться
@@ -586,42 +587,95 @@
         </div>
       </div>
     </footer>
+
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button type="button" class="modal-close-btn" data-modal-close>
-          <svg class="icon-close" width="30" height="30">
+          <svg class="icon-close" width="11" height="11">
             <use href="./images/icons.svg#icon-close"></use>
           </svg>
         </button>
-        <h2 class="backdrop-title">Оставьте свои данные, мы вам перезвоним</h2>
-        <ul class="backdrop-list list">
-          <li class="backdrop-item">
-            <h3 class="backdrop-item-text">Имя</h3>
-            <input type="text">
-          </li>
-          <li class="backdrop-item">
-            <h3 class="backdrop-item-text">Телефон</h3>
-            <input type="tel" id="backdrop-tel">
-              <svg class="icon-send" width="12" height="12">
-                <use href="./images/icons.svg#icon-send"></use>
+        <form class="form">
+          <h2 class="backdrop-title">
+            Оставьте свои данные, мы вам перезвоним
+          </h2>
+          <ul class="backdrop-list list">
+            <li class="backdrop-item">
+              <label for="backdrop-name" class="backdrop-item-label">Имя</label>
+              <input
+                type="text"
+                name="user-name"
+                class="backdrop-item-input"
+                id="backdrop-name"
+                placeholder=""
+                required
+              />
+              <svg class="icon-backdrop-name" width="12" height="12">
+                <use href="./images/icons.svg#icon-backdrop-name"></use>
               </svg>
-          </li>
-          <li class="backdrop-item">
-            <h3 class="backdrop-item-text">Почта</h3>
-            <input type="mail">
-          </li>
-          <li class="backdrop-item">
-            <h3 class="backdrop-item-text">Комментарий</h3>
-            <input type="text" value="Введите текст">
-          </li>
-          <li class="backdrop-item">
-            <div class="checkbox-div"> 
-              <input type="checkbox" id="backdrop-checkbox">
-              <label for="backdrop-checkbox">Соглашаюсь с рассылкой и принимаю <span>Условия договора</span></label>
-            </div>
-          </li>
-        </ul>
-        <button class="hero-btn backdrop-btn">Отправить </button>
+            </li>
+            <li class="backdrop-item">
+              <label fo="backdrop-tel" class="backdrop-item-label"
+                >Телефон</label
+              >
+              <input
+                type="tel"
+                name="user-tel"
+                class="backdrop-item-input"
+                id="backdrop-tel"
+                placeholder=""
+                required
+              />
+              <svg class="icon-backdrop-tel" width="13" height="13">
+                <use href="./images/icons.svg#icon-backdrop-tel"></use>
+              </svg>
+            </li>
+            <li class="backdrop-item">
+              <label for="backdrop-mail" class="backdrop-item-label"
+                >Почта</label
+              >
+              <input
+                type="email"
+                name="user-email"
+                class="backdrop-item-input"
+                id="backdrop-mail"
+                placeholder=""
+                required
+              />
+              <svg class="icon-backdrop-mail" width="15" height="12">
+                <use href="./images/icons.svg#icon-backdrop-mail"></use>
+              </svg>
+            </li>
+            <li class="backdrop-item">
+              <label for="backdrop-comment" class="backdrop-item-label"
+                >Комментарий</label
+              >
+              <textarea
+                name="comment"
+                class="backdrop-item-textarea"
+                id="backdrop-comment"
+                placeholder="Введите текст"
+              ></textarea>
+            </li>
+            <li class="backdrop-item">
+              <div class="checkbox-div">
+                <input
+                  type="checkbox"
+                  name="user-decision"
+                  class="backdrop-item-input"
+                  id="backdrop-checkbox"
+                  required
+                />
+                <label for="backdrop-checkbox"
+                  >Соглашаюсь с рассылкой и принимаю
+                  <a href="" class="contact-link">Условия договора</a></label
+                >
+              </div>
+            </li>
+          </ul>
+          <button class="hero-btn backdrop-btn" type="submit">Отправить</button>
+        </form>
+      </div>
     </div>
     <script src="./js/modal.js"></script>
   </body>
