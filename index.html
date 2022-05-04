@@ -572,12 +572,13 @@
           <div class="footer-mailing-box">
             <input
               type="email"
-              name="email"
+              class="test"
+              name="footer-user-email"
               size="50"
               id="footer-mailing-form"
               placeholder="E-mail"
             />
-            <button type="button" class="footer-mailing-btn">
+            <button type="submit" class="footer-mailing-btn">
               Подписаться
               <svg class="icon-send" width="24" height="24">
                 <use href="./images/icons.svg#icon-send"></use>
@@ -587,7 +588,6 @@
         </div>
       </div>
     </footer>
-
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button type="button" class="modal-close-btn" data-modal-close>
@@ -595,10 +595,8 @@
             <use href="./images/icons.svg#icon-close"></use>
           </svg>
         </button>
-        <form class="form" autocomplete="off" method="post">
-          <h2 class="backdrop-title">
-            Оставьте свои данные, мы вам перезвоним
-          </h2>
+        <p class="backdrop-title">Оставьте свои данные, мы вам перезвоним</p>
+        <form class="form" autocomplete="off">
           <ul class="backdrop-list list">
             <li class="backdrop-item">
               <label for="backdrop-name" class="backdrop-item-label">Имя</label>
@@ -662,7 +660,7 @@
                 <input
                   type="checkbox"
                   name="user-decision"
-                  class="backdrop-item-input hidden"
+                  class="backdrop-item-input"
                   id="backdrop-checkbox"
                   required
                 />
