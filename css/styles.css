@@ -688,7 +688,7 @@ address {
   position: relative;
 }
 
-.portfolio-item-link:hover.portfolio-img-text,
+.portfolio-item-link:hover .portfolio-img-text,
 .portfolio-item-link:focus .portfolio-img-text {
   display: block;
   transform: translateY(0);
@@ -800,14 +800,11 @@ address {
 .backdrop-item:nth-child(2) > input,
 .backdrop-item:nth-child(3) > input {
   height: 40px;
+  padding-left: 42px;
 }
 
-.backdrop-item-input:hover + .icon-backdrop-name,
-.backdrop-item-input:hover + .icon-backdrop-tel,
-.backdrop-item-input:hover + .icon-backdrop-mail,
-.backdrop-item-input:focus + .icon-backdrop-name,
-.backdrop-item-input:focus + .icon-backdrop-tel,
-.backdrop-item-input:focus + .icon-backdrop-mail,
+.backdrop-item-input:hover + .icon-backdrop,
+.backdrop-item-input:focus + .icon-backdrop,
 .backdrop-item-input:hover,
 .backdrop-item-input:focus {
   fill: var(--accent-color);
