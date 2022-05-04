@@ -570,14 +570,10 @@
         <div class="footer-mailing">
           <h3 class="footer-social-title">Подпишитесь на рассылку</h3>
           <div class="footer-mailing-box">
-            <input
-              type="email"
-              class="test"
-              name="footer-user-email"
-              size="50"
-              id="footer-mailing-form"
-              placeholder="E-mail"
-            />
+            <input type="email" <<<<<<< HEAD class="test"
+            name="footer-user-email" ======= name="footer-email" >>>>>>>
+            165e27d612c358f2d5202f0de90c41753c624df2 size="50"
+            id="footer-mailing-form" placeholder="E-mail" />
             <button type="submit" class="footer-mailing-btn">
               Подписаться
               <svg class="icon-send" width="24" height="24">
@@ -597,6 +593,7 @@
         </button>
         <p class="backdrop-title">Оставьте свои данные, мы вам перезвоним</p>
         <form class="form" autocomplete="off">
+          =
           <ul class="backdrop-list list">
             <li class="backdrop-item">
               <label for="backdrop-name" class="backdrop-item-label">Имя</label>
@@ -608,7 +605,11 @@
                 placeholder=""
                 required
               />
-              <svg class="icon-backdrop-name" width="12" height="12">
+              <svg
+                class="icon-backdrop-name icon-backdrop"
+                width="12"
+                height="12"
+              >
                 <use href="./images/icons.svg#icon-backdrop-name"></use>
               </svg>
             </li>
@@ -622,9 +623,14 @@
                 class="backdrop-item-input"
                 id="backdrop-tel"
                 placeholder=""
+                value=""
                 required
               />
-              <svg class="icon-backdrop-tel" width="13" height="13">
+              <svg
+                class="icon-backdrop-tel icon-backdrop"
+                width="13"
+                height="13"
+              >
                 <use href="./images/icons.svg#icon-backdrop-tel"></use>
               </svg>
             </li>
@@ -640,7 +646,11 @@
                 placeholder=""
                 required
               />
-              <svg class="icon-backdrop-mail" width="15" height="12">
+              <svg
+                class="icon-backdrop-mail icon-backdrop"
+                width="15"
+                height="12"
+              >
                 <use href="./images/icons.svg#icon-backdrop-mail"></use>
               </svg>
             </li>
