@@ -846,6 +846,7 @@ address {
 
 .checkbox-div input {
   margin-top: 0;
+  border: 0;
 }
 
 .contact-link {
@@ -910,4 +911,10 @@ address {
   pointer-events: none;
   /* запрещает фокус */
   visibility: hidden;
+}
+
+.hidden {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
 }
