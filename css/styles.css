@@ -699,7 +699,7 @@ address {
 }
 
 .backdrop {
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100vw;
   height: 100vh;
@@ -725,6 +725,12 @@ address {
   margin-right: 40px;
 }
 
+.backdrop-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
 .backdrop-item-input,
 .backdrop-item-label,
 .backdrop-item-textarea {
@@ -733,29 +739,13 @@ address {
   border: 0;
 }
 
-.backdrop-item {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-}
-
-.icon-backdrop-name,
-.icon-backdrop-tel,
-.icon-backdrop-mail {
+.icon-backdrop {
   position: absolute;
-  left: 14px;
-  bottom: 14px;
-  fill: var(--logo-color);
+  left: 12px;
+  bottom: 11px;
   transition-property: fill;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.icon-backdrop-tel {
-  position: absolute;
-  left: 14px;
-  bottom: 14px;
 }
 
 .backdrop-item:first-child {
@@ -790,7 +780,7 @@ address {
 
 .backdrop-item-input {
   margin-top: 4px;
-  padding-left: 10px;
+  padding-left: 40px;
   border-radius: 4px;
   color: var(--main-text-color);
   border: 1px solid rgba(33, 33, 33, 0.2);
@@ -801,12 +791,8 @@ address {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.backdrop-item-input:hover + .icon-backdrop-name,
-.backdrop-item-input:hover + .icon-backdrop-tel,
-.backdrop-item-input:hover + .icon-backdrop-mail,
-.backdrop-item-input:focus + .icon-backdrop-name,
-.backdrop-item-input:focus + .icon-backdrop-tel,
-.backdrop-item-input:focus + .icon-backdrop-mail,
+.backdrop-item-input:hover + .icon-backdrop,
+.backdrop-item-input:focus + .icon-backdrop,
 .backdrop-item-input:hover,
 .backdrop-item-input:focus {
   fill: var(--accent-color);
@@ -814,11 +800,6 @@ address {
   border-color: var(--accent-color);
 }
 
-.backdrop-item-input:active + .icon-backdrop-name {
-  fill: transparent;
-  /* outline-color: var(--accent-color);
-  border-color: var(--accent-color); */
-}
 .backdrop-item-textarea {
   resize: none;
   margin-top: 4px;
@@ -857,7 +838,30 @@ address {
   border: 0;
 }
 
-.contact-link {
+.checkbox-text {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-backdrop-check {
+  z-index: 2;
+  margin-right: 7px;
+  background-color: white;
+}
+.icon-backdrop-checked {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.checkbox-input:checked + .checkbox-text > .icon-backdrop-check {
+  opacity: 0;
+}
+
+.contract-link {
   color: var(--accent-color);
 }
 
