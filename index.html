@@ -567,20 +567,26 @@
             </li>
           </ul>
         </div>
-        <div class="footer-mailing">
-          <h3 class="footer-social-title">Подпишитесь на рассылку</h3>
+        <form class="footer-mailing">
           <div class="footer-mailing-box">
-            <input type="email" class="test" name="footer-user-email" =======
-            name="footer-email" size="50" id="footer-mailing-form"
-            placeholder="E-mail" />
-            <button type="submit" class="footer-mailing-btn">
-              Подписаться
-              <svg class="icon-send" width="24" height="24">
-                <use href="./images/icons.svg#icon-send"></use>
-              </svg>
-            </button>
+            <label class="footer-social-title" for="footer-mailing-form">
+              Подпишитесь на рассылку
+            </label>
+            <input
+              type="email"
+              name="footer-user-email"
+              class="test"
+              id="footer-mailing-form"
+              placeholder="E-mail"
+            />
           </div>
-        </div>
+          <button type="submit" class="footer-mailing-btn">
+            Подписаться
+            <svg class="icon-send" width="24" height="24">
+              <use href="./images/icons.svg#icon-send"></use>
+            </svg>
+          </button>
+        </form>
       </div>
     </footer>
     <div class="backdrop is-hidden" data-modal>
@@ -617,7 +623,6 @@
                 class="backdrop-item-input"
                 id="backdrop-tel"
                 placeholder=""
-                value=""
                 required
               />
               <svg class="icon-backdrop" width="18" height="18">
@@ -667,9 +672,12 @@
                   <svg class="icon-backdrop-checked" width="16" height="15">
                     <use href="./images/icons.svg#icon-backdrop-checked"></use>
                   </svg>
-                  Соглашаюсь с рассылкой и принимаю
-                  <a href="" class="contract-link">Условия договора</a></label
-                >
+
+                  <span class="contract-text">
+                    Cоглашаюсь с рассылкой и принимаю
+                    <a href="" class="contract-link link"> Условия договора</a>
+                  </span>
+                </label>
               </div>
             </li>
           </ul>
