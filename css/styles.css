@@ -435,10 +435,15 @@ img {
 }
 
 /*---------------------Footer section--------------------- */
+
 .footer {
   background-color: var(--secondary-background-color);
   padding-top: 60px;
   padding-bottom: 60px;
+}
+
+.div-footer {
+  flex-grow: 1;
 }
 
 .footer-logo {
@@ -568,6 +573,7 @@ address {
   color: var(--main-white-color);
   background-color: var(--accent-color);
   cursor: pointer;
+  border: transparent;
   border-radius: 4px;
   padding-left: 29px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -575,7 +581,6 @@ address {
 
 .icon-send {
   margin-left: 10px;
-  margin-right: 23px;
   fill: var(--main-white-color);
 }
 /*---------------------Portfolio section--------------------- */
@@ -711,18 +716,13 @@ address {
 }
 
 .backdrop-title {
-  margin-top: 40px;
+  margin-bottom: 12px;
   font-weight: 700;
   font-size: 20px;
   line-height: 1.15;
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--secondary-text-color);
-}
-
-.form {
-  margin-left: 40px;
-  margin-right: 40px;
 }
 
 .backdrop-item {
@@ -747,10 +747,6 @@ address {
   transition-property: fill;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.backdrop-item:first-child {
-  margin-top: 12px;
 }
 
 .backdrop-item:not(:first-child) {
@@ -830,10 +826,6 @@ address {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.checkbox-div {
-  margin-top: 4px;
-}
-
 .checkbox-div input {
   margin-top: 0;
   border: 0;
@@ -889,6 +881,7 @@ address {
 }
 
 .modal {
+  padding: 40px;
   margin: auto;
   width: 528px;
   min-height: 581px;
